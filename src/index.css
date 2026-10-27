@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-gradient: linear-gradient(180deg, #f9f9fc 0%, #fffcf7 52%, #fbf7f2 100%);
+  --surface: rgba(255, 255, 255, 0.72);
+  --surface-strong: rgba(255, 255, 255, 0.9);
+  --surface-muted: #f5f5f8;
+  --ink: #122d45;
+  --ink-2: #334155;
+  --muted: #6b6580;
+  --subtle: #8a849c;
+  --border: rgba(18, 45, 69, 0.12);
+  --border-strong: rgba(25, 53, 77, 0.5);
+  --accent: #122d45;
+  --accent-hover: #1061a6;
+  --focus: #85b1ed;
+  --success: #1a8047;
+  --danger: #ba2b4c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--ink);
+  background: var(--bg-gradient);
+  -webkit-font-smoothing: antialiased;
+}
+
+.display {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', Menlo, monospace;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.64);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  box-shadow: 0 8px 32px rgba(18, 45, 69, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+.glass-inner {
+  background: rgba(255, 255, 255, 0.46);
+  border: 1px solid rgba(18, 45, 69, 0.08);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+.btn-primary:hover:not(:disabled) {
+  transform: scale(1.01);
+}
+.btn-primary:active:not(:disabled) {
+  transform: scale(0.99);
+}
+.btn-primary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid var(--border);
+  color: var(--ink);
+}
+.btn-ghost:hover:not(:disabled) {
+  border-color: var(--border-strong);
+}
+.btn-ghost:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+input:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
